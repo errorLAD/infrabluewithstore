@@ -1,0 +1,38 @@
+{% load static %}
+<div class="page-section restaurant-detail-image-section" style=" background: url({% if vendor.user_profile.cover_photo %} {{ vendor.user_profile.cover_photo.url }} {% else %} {'https://upload.picpaste.me/images/2022/08/30/cold-smooth--tasty..png'}{% endif %}) no-repeat scroll 0 0 / cover;">
+    <!-- Container Start -->
+    <div class="container">
+        <!-- Row Start -->
+        <div class="row">
+            <!-- Column Start -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="company-info-detail">
+                    <div class="company-info">
+                        <div class="img-holder">
+                            <figure>
+                                {% if vendor.user_profile.profile_picture %}
+                                <img src="{{ vendor.user_profile.profile_picture.url }}" alt="">
+                                {% else %}
+                                <img src="https://upload.picpaste.me/images/2022/08/30/kisspng-clip-art-portable-network-graphics-vector-graphics-5c031bce3bb2c9.3370308215437075982445-removebg-preview.png" alt="">
+                                {% endif %}
+                            </figure>
+                        </div>
+
+                        <div class="text-holder">
+                            <span class="restaurant-title">{{vendor.vendor_name}}</span>
+                            <div class="text">
+                                {% if vendor.user_profile.address %}
+                                <i class="icon-location"></i>
+                                <p>{{vendor.user_profile.address}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Column End -->
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>

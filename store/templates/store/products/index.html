@@ -1,0 +1,55 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+
+<div class="py-3 bg-light">
+    <div class="container">
+        <a class="text-dark" href="{% url 'home' %}"> Home </a>
+        <span class="text-primary"><b>/</b></span>
+        <a class="text-dark" href="{% url 'collections' %}"> Collections </a>
+        <span class="text-primary"><b>/</b></span>
+        <a class="text-dark" href="{% url 'collectionsview' category.slug %}"> {{ category.name }} </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Header -->
+            <header class="w3-container w3-center w3-padding-24"> 
+               <h1><b>{{ category.name }}</b></h1>
+               <p>Welcome to the <span class="w3-tag">{{ category.name }}</span> category</p>
+            </header>
+    
+            <div class="row">
+            {% for item in products %}
+                <div class="col-md-3">
+                    <div class=" ">
+                        <a href="{% url 'productview' item.category.slug item.slug %}">
+                            <div class="card-body container">
+                                <div class="category-image">
+                                    <img src="{{ item.product_image.url }}" alt="Product image" class="w-100"/>
+                                </div>
+                                <p class="py-1"><strong>{{ item.name }}</strong></p>
+                                  <span class="py-1 w3-opacity"><small>* {{ item.small_description }}</small></span>
+                                 <div>
+                                  <h6 class="float-start w3-opacity product-old-price"> <s>₹ {{ item.original_price | stringformat:'d' }}</s> 
+                                  </h6>
+                                  <h5 class="float-end product-price"> <b>
+                                   <span class="w3-text-red"> ₹ {{ item.selling_price | stringformat:'d' }}</span></b></h5>
+                                </div>
+                            </div> 
+                            <div class="px-3 w3-center py-12">
+                                <button type="button" class="btn btn-primary btn-sm w3-block">View</button>
+                            </div>                   
+                        </a>
+                    </div>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,161 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+    {% include 'store/inc/slider.html' %}
+
+   
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3> 
+                
+                 <img
+                 height="45px"
+                 src="https://i.postimg.cc/kGnWyDBh/Trending-Products1123-1.png"
+                 alt="First slide"
+               />  
+                </h3>
+           
+            <div class="row owl-carousel owl-theme">
+            {% for item in trending_products %}
+                <div class="product_data item">
+                    <div class=" p-3 mb-5 bg-white rounded">
+                        <div class="card-body ">
+                            <a href="{% url 'productview' item.category.slug item.slug %}">
+                                <div class="category-image">
+                                    <img src="{{ item.product_image.url }}" alt="Product image" class="w-100"/>
+                                </div>
+                                <h6 class=""><strong>{{ item.name }}</strong> </h6>
+                            </a>
+                            <span class="float-start w3-opacity"><s> ₹ {{ item.original_price }}</s> </span>
+                            <span class="float-end"> ₹ {{ item.selling_price }}</span>
+                            <br>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{ item.id }}" class="prod_id">
+                                    <div class="input-group text-center mb-3">
+                                        <button class="input-group-text decrement-btn">-</button>
+                                        <input type="text" name="quantity" class="form-control qty-input text-center" value="1" >
+                                        <button class="input-group-text increment-btn">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 px-0">
+                                    <span class="mb-2">
+                                        {% if item.quantity > 0 %}
+                                            <button type="button" class="btn btn-primary btn-sm me-3 py-2 addToCartBtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                        {% else %}
+                                            <button type="button" class="btn btn-danger btn-sm me-3 py-2 disabled">Out of Stock</button>
+                                        {% endif %}
+                                    </span>   
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted">
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+          
+            <p>
+                InfraBlue.in is B2B marketPlace for construction material and Building material.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+          
+     
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+
+            <p>
+              <a href="{% url 'aboutus' %}" class="text-reset">About US</a>
+            </p>
+            <p>
+              <a href="{% url 'tream' %}" class="text-reset">Team And condition</a>
+            </p>
+            <p>
+              <a href="https://angel.co/company/gohardware-in" class="text-reset">Careers</a>
+            </p>
+        
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> noida | india</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              infrablueindia@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> 7004197301</p>
+          
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: white;">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="https://mdbootstrap.com/">infrablue.in</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+
+</script>
+
+{% endblock scripts %}

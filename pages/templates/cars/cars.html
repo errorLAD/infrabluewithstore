@@ -1,0 +1,184 @@
+{% extends 'bases.html' %}
+
+
+{% block title %} | carSearch Result {% endblock %}
+{% block content %}
+{% load humanize %}
+<br/><br/><br/>
+<div class="px-12 w3-row w3-padding-34 w3-hide-small">
+  <div class="w3-container w3-center w3-padding-34"> 
+    <h5 class="w3-center py-2"><span class="w3-tag w3-wide"> </span></h5>
+  </div> 
+  <br>
+    <div class="w3-col  s9 ">
+
+<div class="">
+<div class="   max-w-9xl  px-6 grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 xl:grid-cols-4 gap-2">
+    <!--Card 1-->
+    {% for car in cars %}
+    <div class="rounded overflow-hidden shadow-lg">
+        <a href="{% url 'car_detail' car.id %}" class="car-img">
+      <img class="w-full" src="{{car.car_photo.url}}" alt="Mountain">
+    </a>
+      <div class="px-2 py-2">
+        <div class="font-bold text-l mb-2">
+            <span class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">
+                <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+            </span>
+            <span class="w3-right text-xs  inline-block py-1 px-2 uppercase rounded text-slate-600 bg-slate-200 last:mr-0 mr-1">
+                {{car.model}}
+                </span>
+          
+
+        </div>
+       
+          <span class="text-xs inline-block   rounded text-gray-600  last:mr-0 mr-1">
+
+          
+            <a href="{% url 'car_detail' car.id %}">
+                <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+            </a>
+        </span>
+      </div>
+      <div class="px-2 pb-2">
+        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-slate-600 bg-slate-200 uppercase last:mr-0 mr-1">
+            <span> ₹{{car.price | intcomma }}/<small>Per Day</small></span>
+          </span>      
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+    </div>
+    <div class="w3-col s3  w3-center w3-hide-small">
+        <div class="search-box-4 sb-8">
+
+            <div class="p-4 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <form class="space-y-6"  action="{% url 'carsearch' %}"  action="#" method="">
+                    <div class="" style="width: 16rem;">
+                      <img class="card-img-top " src="https://imgur.com/f3Kfz9e.png" alt="Card image cap">
+                   
+                    </div>
+        
+
+                    <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="model">    
+                        <option  selected="true" disabled="disabled">Categories </option>
+                        {% for model in model_search %}
+                        <option value="{{model}}">{{model}}</option>
+                        {% endfor %}
+                    </select>
+
+                    
+                    <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+                        <option  selected="true" disabled="disabled">Location</option>
+                        {% for city in city_search %}
+                        <option value="{{city}}">{{city}}</option>
+                        {% endfor %}
+                    </select>
+
+                 
+                      
+        
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-block button-theme btn-md w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        
+                        <i class="fa fa-search"></i> Search </button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+  </div>
+<!--small-->
+<div class="w3-hide-large w3-hide-medium">
+  <div class="px-4 p-4 w-full max-w-sm bg-white rounded-lg border  sm:p-6 md:p-8 dark:bg-gray-800 ">
+    <form class="px-3 space-y-6"  action="{% url 'carsearch' %}"  action="#" method="">
+        <div class="" style="width: 18rem;">
+            <img class="card-img-top " src="https://imgur.com/f3Kfz9e.png" alt="Card image cap">
+        </div>
+
+
+        <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="model">    
+            <option  selected="true" disabled="disabled">Categories </option>
+            {% for model in model_search %}
+            <option value="{{model}}">{{model}}</option>
+            {% endfor %}
+        </select>
+
+        
+        <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+            <option  selected="true" disabled="disabled">Location</option>
+            {% for city in city_search %}
+            <option value="{{city}}">{{city}}</option>
+            {% endfor %}
+        </select>
+
+       
+          
+
+        <div class="form-group">
+        <button type="submit" class="btn btn-block button-theme btn-md w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            
+            <i class="fa fa-search"></i> Search</button>
+    </div>
+    </form>
+</div>
+
+<!--card-->
+
+<div class="py-4">
+ 
+  <div class="   max-w-9xl  px-6 grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-4 xl:grid-cols-4 gap-2">
+
+    <div class="w3-container w3-center w3-padding-34"> 
+      <h5 class="w3-center py-2"><span class="w3-tag w3-wide">PRODUCT</span></h5>
+   
+    </div> 
+      <!--Card 1-->
+      {% for car in cars %}
+      <div class="rounded overflow-hidden shadow-lg">
+          <a href="{% url 'car_detail' car.id %}" class="car-img">
+        <img class="w-full" src="{{car.car_photo.url}}" alt="Mountain">
+      </a>
+        <div class="px-2 py-1">
+          <div class="font-bold text-l mb-2">
+              <span class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">
+                  <a href="{% url 'car_detail' car.id %}">{{ car.car_title }}</a>
+              </span>
+              <span class="w3-right text-xs  inline-block py-1 px-2 uppercase rounded text-slate-600 bg-slate-100 last:mr-0 mr-1">
+                  {{car.model}}
+                  </span>
+            
+  
+          </div>
+         
+            <span class="text-xs inline-block   rounded text-gray-600  last:mr-0 mr-1">
+  
+            
+              <a href="{% url 'car_detail' car.id %}">
+                  <i class="flaticon-pin"></i>{{car.state}}, {{car.city}}
+              </a>
+          </span>
+        </div>
+        <div class="px-2 pt-2 pb-2">
+          <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-slate-600 bg-slate-200 uppercase last:mr-0 mr-1">
+              <span> start ₹{{car.price | intcomma }}</span>
+            </span>      
+         
+              
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+<div class="py-3 bg-light">
+    <div class="container">
+        <a class="text-dark" href="{% url 'home' %}"><b> Home </b></a>
+        <span class="text-primary"><b>/</b></span>
+        <a class="text-dark" href="{% url 'cart' %}"> <b>Cart </b></a>
+    </div>
+</div>
+
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-12">
+                <div class="">
+                    <div class="card-body cartdata">
+                        {% if cart %}
+                            {% for item in cart %}
+                                <div class="row product_data ">
+                                    <div class="col-md-2 my-auto w3-hide-small ">
+                                        <img src="{{ item.product.product_image.url }}" height="80px" width="80px" alt="Image here">
+                                    </div>
+                                
+                                    <div class="col-md-3 my-auto  w3-hide-small ">
+                                        <h6 class="card-title"> <span class="w3-tag w3-large ">{{ item.product.name }}</span></h6>
+                                        <p class="w3-opacity"><small>{{ item.product.small_description }}</small></p>
+                                    </div>
+                                    <div class="col-md-2 my-auto w3-hide-small">
+                                        <h6> <strong> ₹ {{ item.product.selling_price | stringformat:'d' }} </strong></h6>
+                                    </div>
+                                <!--small-->
+                                <div class="card-body w3-hide-large w3-hide-medium">
+                                    <div class="w3-row">
+                                        <div class="w3-col s2 w3-center">   
+                                               <img src="{{ item.product.product_image.url }}" height="80px" width="80px" alt="Image here">
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="w3-row">
+                                        <div class="w3-col s12 ">
+                                            <span class="w3-tag w3-large px-4">{{ item.product.name }}</span>
+                                            <p class="w3-opacity  py-2">{{ item.product.small_description }}</p>
+                                        </div>
+                                       
+                                 </div>
+                                 
+
+                                 <div class="w3-row">
+                                    <div class="w3-col s8 ">
+                                        <h6> <strong> ₹ {{ item.product.selling_price | stringformat:'d' }} </strong></h6>
+                                    </div>
+                                   
+                                    <div class="w3-col s4  ">
+                                        <div class="">
+                                            <button class="btn  delete-cart-item"> <i class="fa fa-trash"></i> Remove</button>
+                                        </div>
+                                  </div>
+                             </div>
+                             </div>
+                            
+
+                                <!--small end-->
+                                    <div class="col-md-3 my-auto">
+                                        <input type="hidden" class="prod_id" value="{{ item.product_id }}">
+                                        {% csrf_token %}
+                                        {% if item.product.quantity >= item.product_qty %}
+                                            <label class="w3-opacity" for="Quantity ">Quantity</label>
+                                            <div class="input-group text-center mb-3" style="width:130px;">
+                                                <button class="input-group-text changeQuantity decrement-btn">-</button>
+                                                <input type="text" name="quantity" class="form-control qty-input text-center" value="{{ item.product_qty }}" >
+                                                <button class="input-group-text changeQuantity increment-btn">+</button>
+                                            </div>
+                                        {% else %}
+                                            <h6> <span class="w3-tag w3-teal">Out of Stock</span></h6>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-2 my-auto w3-hide-small">
+                                        <button class="btn  delete-cart-item"> <span class="text-red"><i class="fa fa-trash"></i></span> Remove</button>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <br>
+                            <a href="{% url 'checkout' %}" class="btn btn-primary float-end">Checkout </a>
+                            <br><br><br>
+                        {% else %}
+                        <div class="w3-hide-small">
+                            <img src="https://i.postimg.cc/J0gsHJty/cart-is-emptywsdfghjk.png" width="420px" alt="Image here">
+                          </div>
+  
+                          <div class="w3-hide-large w3-hide-medium">
+                              <img src="https://i.postimg.cc/85SshN1H/cart-is-emptyhhhhh.png.png" width="310px" alt="Image here">
+                            </div>
+                        {% endif %}
+                        <br>
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

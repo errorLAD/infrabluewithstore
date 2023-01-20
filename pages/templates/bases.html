@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>infrablue  {% block title %}    {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <meta charset="utf-8">
+    <meta content="Hardware shop,Contruction Material Shop, Building Material Shop,Domestic Worker, Worker,plumber , electrician, contractor,  " name="keywords">
+    <meta content="Find the nearest hardware shop construction material shop and worker ,labour,  plumber and electrician( निकटतम हार्डवेयर और निर्माण सामग्री की दुकान, कर्मचारी,और  प्लंबर और इलेक्ट्रीशियन खोजें)" name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://cdn.tailwindcss.com"></script>
+
+
+ <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+<link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+
+<body>
+<div class="page_loader"></div>
+
+{% include 'includes/topbar.html' %}
+
+{% include 'includes/navbars.html' %}
+
+
+
+{% block content %}
+
+
+{% endblock %}
+
+<!-- Full Page Search -->
+
+{% include 'includes/footers.html' %}
+
+
+
+<script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    
+    
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+    
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+    
+    // Close the sidebar with the close button
+    function w3_close() {
+        mySidebar.style.display = "none";
+    }
+ 
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000); // Change image every 2 seconds
+  }
+  </script>
+<script src="jquery.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
+</script>
+</body>
+
+</html>

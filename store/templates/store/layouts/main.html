@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="infrablue.in | construction material and Building Material">
+    <meta name="description" content="InfraBlue.in is B2B marketPlace for construction material and Building material.">
+    <meta name="keywords" content="construction material,Building Material,cement,steel, bathroom , tiles ,plumbing materials">
+    <link href="https://i.postimg.cc/2SMcgXng/qwertyuiokm-bvgfds-removebg-preview.png" rel="icon">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <title>
+        {% block title %}
+        infrablue.in | construction material and Building Materials
+        {% endblock title %}
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+   <link href="{% static 'css/custom.css' %}" rel="stylesheet"/>
+
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RG8EF7TMRH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RG8EF7TMRH');
+</script>
+
+<script type='text/javascript'>
+    window.smartlook||(function(d) {
+      var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+      var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+      c.charset='utf-8';c.src='https://web-sdk.smartlook.com/recorder.js';h.appendChild(c);
+      })(document);
+      smartlook('init', 'c7a84a60c22490bf1a79a65e569d8ef7f948f5e3', { region: 'eu' });
+  </script>
+
+    {% comment %} ALERTIFY JS {% endcomment %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    {% comment %} Tawk To {% endcomment %}
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .product-viewtag{
+            background-color: red;
+            color: #fff;
+            font-size: 11px;
+            line-height: 1;
+            position: absolute;
+            text-align: center;
+            text-transform: uppercase;
+            top: 22px;
+            margin-left: 17.5rem;
+            padding: 7px 10px;
+            font-weight: 600;
+            min-width: 45px;
+        }
+        .active{
+            font-weight:800;
+        }
+    </style>
+</head>
+<body>
+    {% include 'store/inc/navbar.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <a href="https://wa.me/+917004197301?text=I'm%20interested%20in%20to%chat" target="_blank" class="whatsapp-chat">
+        <img src="{% static '/images/whatsapp.png' %}" alt="whatsapp" width="70px" />
+    </a>
+
+    {% comment %} Jquery {% endcomment %}
+    <script src="{% static '/js/jquery-3.6.0.min.js' %}"> </script>
+
+    {% comment %} Custom JS {% endcomment %}
+    <script src="{% static '/js/custom.js' %}"> </script>
+
+    <script src="{% static '/js/owl.carousel.min.js' %}"> </script>
+
+    {% comment %} Bootstrap {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        var availableTags = [];
+
+        $.ajax({
+            method: "GET",
+            url: "/product-list",
+            success: function (response) {
+                startAutocomplete(response);
+            }
+        });
+
+        function startAutocomplete(availableTags)
+        {
+            $( "#searchproducts" ).autocomplete({
+                source: availableTags
+            });
+        }
+
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/633c185454f06e12d8985a14/1gehbu3c0';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <!--End of Tawk.to Script-->
+
+    {% comment %} Alertify JS {% endcomment %}
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <script>
+        alertify.set('notifier','position', 'top-right');
+
+        {% for msg in messages %}
+            alertify.success('{{ msg }}');
+        {% endfor %}
+    </script>
+
+    {% block scripts %}
+
+    {% endblock scripts %}
+
+    {% comment %} Razorpay Checkout {% endcomment %}
+    <script src="{% static '/js/checkout.js' %}"> </script>
+
+
+
+</body>
+</html>

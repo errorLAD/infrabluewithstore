@@ -1,0 +1,21 @@
+{% if messages %}
+
+  {% for message in messages %}
+  <div class=" text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800" role="alert">
+    <span class="font-medium">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+
+            <strong>
+              {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                  Error:
+              {% else %}
+                  {{mesaage.tags|title}}
+              {% endif %}
+            </strong>
+            {{message}}
+        </div>
+      </span>
+      </div>
+  {% endfor %}
+
+{% endif %}

@@ -1,0 +1,296 @@
+{% extends 'bases.html' %}
+
+{% block title %} | Home {% endblock %}
+{% block content %}
+
+{% load humanize %}
+{% load static %}
+<!-- Banner start -->
+
+
+<div class=" w3-hide-small w3-hide-medium">
+
+
+<!-- Header -->
+<header class="w3-display-container w3-wide" id="home">
+  <img class="w3-image" src="https://i.postimg.cc/52n1pdMH/steel-manufacturing-molten-1.jpg" alt="Fashion Blog" width="1600" height="1060">
+
+
+  <div class="w3-display-right w3-padding-large">
+    <div class="p-8 w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+      <form class="space-y-6"  action="{% url 'carsearch' %}"  action="#" method="">
+          <div class="" style="width: 21rem;">
+              <img class="card-img-top " src="https://imgur.com/f3Kfz9e.png" alt="Card image cap">
+          </div>
+
+          <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="model">
+              <option  selected="true" disabled="disabled">Categories</option>
+              {% for model in model_search %}
+              <option value="{{model}}">{{model}}</option>
+              {% endfor %}
+          </select>
+
+
+          <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+              <option  selected="true" disabled="disabled">Location</option>
+              {% for city in city_search %}
+              <option value="{{city}}">{{city}}</option>
+              {% endfor %}
+          </select>
+
+
+
+
+          <div class="form-group">
+          <button type="submit" class="btn btn-block button-theme btn-md w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+              <i class="fa fa-search"></i> Search</button>
+      </div>
+      </form>
+  </div> </div>
+
+</header>
+
+
+
+</div>
+
+<!--small-->
+
+<div class="w3-hide-large w3-hide-medium">
+
+  <header class="w3-display-container w3-content" style="max-width:1500px;">
+    <img class="w3-image" src="https://i.postimg.cc/44qzNz0S/steel-mill-worker-foundry-metal.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-left w3-padding w3-col 8 m8">
+
+      <div class="w3-container  w3-padding-8">
+        <form class="space-y-6"  action="{% url 'carsearch' %}"  action="#" method="">
+          <div >
+            <img class="card-img-top " src="https://imgur.com/f3Kfz9e.png" alt="Card image cap">
+          </div>
+
+
+          <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="model">
+              <option  selected="true" disabled="disabled">Categories </option>
+              {% for model in model_search %}
+              <option value="{{model}}">{{model}}</option>
+              {% endfor %}
+          </select>
+
+
+          <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+              <option  selected="true" disabled="disabled">Location</option>
+              {% for city in city_search %}
+              <option value="{{city}}">{{city}}</option>
+              {% endfor %}
+          </select>
+
+
+
+          <div class="form-group">
+          <button type="submit" class="btn btn-block button-theme btn-md w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+              <i class="fa fa-search"></i> Search</button>
+      </div>
+      </form>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <div class="w3-hide-small" style="max-width:505px">
+    <img class="w3-image" src="https://i.postimg.cc/44qzNz0S/steel-mill-worker-foundry-metal.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-topmiddle">
+       <img class="w3-image" src="https://i.postimg.cc/pXD7xXd3/onlinehhhbvvvvvvbn-removebg-preview-1-1.png" alt="Fashion Blog" width="800" height="1160">
+    </div>
+    <div class="w3-display-middle ">
+
+      <img class="w3-image" src="https://i.postimg.cc/pXD7xXd3/onlinehhhbvvvvvvbn-removebg-preview-1-1.png" alt="Fashion Blog" width="800" height="1160">
+
+     <form class="space-y-6"  action="{% url 'carsearch' %}"  action="#" method="">
+        <div >
+            <img class="card-img-top " src="https://imgur.com/AkmlGD2.png" alt="Card image cap">
+        </div>
+
+
+        <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="model">
+            <option  selected="true" disabled="disabled">Categories </option>
+            {% for model in model_search %}
+            <option value="{{model}}">{{model}}</option>
+            {% endfor %}
+        </select>
+
+
+        <select id="small" class="form-control search-fields block p-2 mb-6 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="city">
+            <option  selected="true" disabled="disabled">Location</option>
+            {% for city in city_search %}
+            <option value="{{city}}">{{city}}</option>
+            {% endfor %}
+        </select>
+
+
+
+        <div class="form-group">
+        <button type="submit" class="btn btn-block button-theme btn-md w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+
+            <i class="fa fa-search"></i> Search</button>
+    </div>
+    </form>
+    </div>
+
+
+</div>
+</div>
+
+
+
+</div>
+
+
+
+
+<!--product-->
+  <!-- About Section -->
+  <div class="w3-hide-small">
+  <div class="w3-container w3-padding-24 px-16" id="about">
+    <div  style="width: 10rem;">
+      <img class="c " src="https://imgur.com/qeHOJWM.png" alt="Card image cap">
+  </div>
+  </div>
+
+  <div class="w3-row-padding w3-grayscale px-14">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="https://i.postimg.cc/cHTG0nZr/Untitled-designhhhhhhhh.png" alt="John" style="width:100%">
+
+
+      <h1><b>MS TMT BARS</b></h1>
+      <p class="w3-text-orange"> 4 grades of TMT steel bars :- Fe-415, Fe-500, FE-550, Fe-600</p>
+      <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+      </span>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="https://i.postimg.cc/904Nck9H/Untitled-designnnnn.png" alt="Jane" style="width:100%">
+      <h1><b>MS STEEL PLATE</b></h1>
+      <p class="w3-text-orange">Stainless Steel Sheet, Carbon Steel Plate, Other</p>
+      <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+       </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="https://i.postimg.cc/x84ypHPL/Untitled-design-MMM.png" alt="Mike" style="width:100%">
+      <h1><b>TUBES AND BAR</b></h1>
+      <p class="w3-text-orange">Stainless Steel Tube, Alloy Steel Tube ,
+        Other Steel Tubes</p>
+      <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <img src="https://i.postimg.cc/xC6NRzGY/Untitled-design-NJNNBMNNN.png" alt="Dan" style="width:100%">
+      <h1><b>TMT BINDING WIRE AND TMT RING  </b></h1>
+      <p class="w3-text-orange">TMT Rings, Grade: Fe 500, Size: 16 Inch X 7 Inch, Gauge	22 Gauge
+        Quantity Per Pack	20-30 kg
+        Other Steel Tubes</p>
+      <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+    </div>
+  </div>
+<!--brand-->
+<br><br>
+<div class="py-4 px-6">
+<div class="swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9  py-3 py-lg-4" data-slider-nav-autoplay-interval="2000">
+  <div class="slider-container">
+      <div><img src="https://i.postimg.cc/g2d69WFX/download.png" alt="..."></div>
+      <div><img src="https://i.postimg.cc/0ydHYDq6/download-2.jpg" loading="lazy" alt="..."></div>
+      <div><img src="https://i.postimg.cc/v8rqF5c0/images.png" loading="lazy" alt="..."></div>
+      <div><img src="https://i.postimg.cc/Rh2KJs0k/01-10-2019-17-54-58-4725204.jpg" loading="lazy" alt="..."></div>
+
+  </div>
+
+  <button type="button" class="slider-nav" aria-label="Go left"></button>
+  <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<!--small-->
+<!--product-->
+  <!-- About Section -->
+  <div class="w3-hide-large w3-hide-medium">
+    <div class="w3-container  px-6 py-8" id="about">
+      <div  style="width: 10rem;">
+        <img class="c " src="https://imgur.com/qeHOJWM.png" alt="Card image cap">
+    </div>
+    </div>
+
+    <div class="w3-row-padding w3-grayscale px-2">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="https://i.postimg.cc/cHTG0nZr/Untitled-designhhhhhhhh.png" alt="John" style="width:100%">
+
+
+        <h1><b>MS TMT BARS</b></h1>
+        <p class="w3-text-orange"> 4 grades of TMT steel bars :- Fe-415, Fe-500, FE-550, Fe-600</p>
+        <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+        </span>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="https://i.postimg.cc/3xhKqqbJ/Untitled-designmmm.png" alt="Jane" style="width:100%">
+        <h1><b>MS STEEL PLATE</b></h1>
+        <p class="w3-text-orange">Stainless Steel Sheet, Carbon Steel Plate, Other</p>
+        <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+         </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="https://i.postimg.cc/x84ypHPL/Untitled-design-MMM.png" alt="Mike" style="width:100%">
+        <h1><b>TUBES AND BAR</b></h1>
+        <p class="w3-text-orange">Stainless Steel Tube, Alloy Steel Tube ,
+          Other Steel Tubes</p>
+        <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src="https://i.postimg.cc/xC6NRzGY/Untitled-design-NJNNBMNNN.png" alt="Dan" style="width:100%">
+        <h1><b>TMT BINDING WIRE AND TMT RING  </b></h1>
+        <p class="w3-text-orange">TMT Rings, Grade: Fe 500, Size: 16 Inch X 7 Inch, Gauge	22 Gauge
+          Quantity Per Pack	20-30 kg
+          Other Steel Tubes</p>
+        <p class="w3-opacity w3-hide-large w3-hide-small w3-hide">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+
+      </div>
+    </div>
+  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured car end -->
+<!-- Footer --><br><br><br>
+  <!-- The Contact Section -->
+  <div class="w3-container w3-content w3-padding-48 w3-greyscale-min w3-hide-small w3-hide-large" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">CONTACT</h2>
+    <p class="w3-opacity w3-center"><i>Fan? Drop a note!</i></p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-col m6 w3-large w3-margin-bottom ">
+        <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+        <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+        <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+      </div>
+      <div class="w3-col m6">
+
+      </div>
+    </div>
+  </div>
+
+<!-- End Page Content -->
+</div>
+
+
+
+<!-- Footer End -->
+{% endblock %}

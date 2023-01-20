@@ -1,0 +1,125 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+<div class="container">
+   <br><br>
+    <div class="w3-row w3-hide-small">
+        <div class="w3-col s6  w3-center"><img
+            height="450px"
+            src="https://i.postimg.cc/6qYXfnxM/pinot-noirsdssdss.png"
+            alt="First slide"
+          />  </div>
+        <div class="w3-col s5">    <div class="card-body">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="">
+                    <h4> <img
+                        height="70px"
+                        src="https://i.postimg.cc/HsVNJQK6/fgff.png"
+                        alt="First slide"
+                      />
+                    </h4>
+                </div>
+
+                <div class="form-group">
+                    <label for=""> <span class="w3-opacity"> GST/TIN Number </span></label>
+                    {{form.username}}
+                    {% if form.errors.username %}
+                        <label class="text-danger"> {{ form.errors.username }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="">  <span class="w3-opacity">Email  </span></label>
+                    {{form.email}}
+                     {% if form.errors.email %}
+                        <label class="text-danger"> {{ form.errors.email }}</label>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for=""> <span class="w3-opacity">Password </span></label>
+                    {{form.password1}}
+                     {% if form.errors.password1 %}
+                        <label class="text-danger"> {{ form.errors.password1 }}</label>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for=""> <span class="w3-opacity">Confirm Password </span></label>
+                    {{form.password2}}
+                     {% if form.errors.password2 %}
+                        <label class="text-danger"> {{ form.errors.password2 }}</label>
+                    {% endif %}
+                </div>
+                <button type="submit" class="btn float-end shadow btn-primary px-4">Register</button>
+                <div class="w3-bar">
+                    <div class="w3-button w3-left w3-opacity"><small><a href="/login">* Already have an account?<span class="w3-text-blue">LogIn</span></a></small></div>
+                    <div class="w3-button w3-right "> <button type="submit" class="btn float-end shadow btn-primary px-4">Register</button>
+                    </div>
+                  </div>
+
+            </form>
+        </div></div>
+      </div>
+
+
+
+<!---small-->
+
+  <div class="w3-hide-medium w3-hide-large">
+    <img
+     height="210px"
+    src="https://i.postimg.cc/BZPjpvjM/Untitled-designmm-1.png"
+    alt="First slide"
+  />
+        <form action="" method="POST">
+            {% csrf_token %}
+
+                <h4 class=""> <img
+                    height="50px"
+                    src="https://i.postimg.cc/7YnprxFk/fgff-removebg-preview.png"
+                    alt="First slide"
+                  />
+                </h4>
+
+
+            <div class="form-group">
+                <label for=""> <span class="w3-opacity"> GST/TIN Number </span></label>
+                {{form.username}}
+                {% if form.errors.username %}
+                    <label class="text-danger"> {{ form.errors.username }}</label>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="">  <span class="w3-opacity">Email  </span></label>
+                {{form.email}}
+                 {% if form.errors.email %}
+                    <label class="text-danger"> {{ form.errors.email }}</label>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for=""> <span class="w3-opacity">Password </span></label>
+                {{form.password1}}
+                 {% if form.errors.password1 %}
+                    <label class="text-danger"> {{ form.errors.password1 }}</label>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for=""> <span class="w3-opacity">Confirm Password </span></label>
+                {{form.password2}}
+                 {% if form.errors.password2 %}
+                    <label class="text-danger"> {{ form.errors.password2 }}</label>
+                {% endif %}
+            </div>
+            <div class="w3-bar">
+                <div class="w3-button w3-left w3-opacity"><small><a href="/login">* Already have an account?  <span class="w3-text-blue">LogIn </span></a></small></div>
+                <div class="w3-button w3-right "> <button type="submit" class="btn float-end shadow btn-primary px-4">Register</button>
+                </div>
+              </div>
+              <br><br><br> <br><br><br>
+          </form>
+
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,111 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container">
+    <a class="navbar-brand w3-hide-small " href="#">
+      <img src="https://i.postimg.cc/cJKnvCrj/R6GCXt7.png" width="100" height="30"/>
+    </a>
+    <a class="navbar-brand w3-hide-large w3-hide-medium" href="#">
+      <img src="https://i.postimg.cc/cJKnvCrj/R6GCXt7.png" width="80" height="25"/>
+    </a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+   
+    <div class="search-bar w3-hide-small w3-hide-medium">
+      <form action="{% url 'searchproduct' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="search" required class="form-control" name="productsearch" id="searchproducts" placeholder="Search products">
+          <button type="submit" class="input-group-text"> <i class="fa fa-search"> </i> </button>
+        </div>
+      </form>
+  
+    </div>
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item w3-hide-small">
+          <a class="nav-link {% if request.resolver_match.url_name == 'cart' %}active{% endif %}" aria-current="page" href="{% url 'cart' %}">
+            <button type="button" class="btn btn-light" data-mdb-ripple-color="dark"><small><i class="fa fa-shopping-cart text-success" aria-hidden="true"></i> 
+              Cart</small></button></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}">
+            <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+              <small> 
+              Home</small></button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  {% if request.resolver_match.url_name == 'collections' %}active{% endif %}" href="{% url 'collections' %}">
+            <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+              <small>
+              Category</small>            </button></a>
+        </li>
+       
+   
+        <li class="nav-item">
+          <a class="nav-link {% if request.resolver_match.url_name == 'wishlist' %}active{% endif %}" aria-current="page" href="{% url 'wishlist' %}">
+            <small> <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+             Wishlist</small></button></a>
+        </li>
+        {% if request.user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button type="button" class="btn btn-light" data-mdb-ripple-color="dark">
+            <small>{{ request.user }}</small></button>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'myorders' %}"><small>My Orders</small></a></li>
+             
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item"  href="{% url 'logout' %}">
+                <button type="button" class="btn btn-danger btn-block">Logout</button></a></li>
+            </ul>
+         </li>
+           
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'loginpage' %}">
+              <button class="btn btn-primary" type="submit"><small>Login</small></button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">
+              <button class="btn btn-primary" type="submit"><small>Register</small></button></a>
+          </li>
+        {% endif %}
+      
+      </ul>
+    
+    </div>
+  </div>
+
+ 
+</nav>
+
+<div class="w3-hide-large w3-hide-medium w3-container py-2">
+  <div class="w3-row">
+    <div class="w3-col s10 py-2 ">
+      <span class="">
+      <form action="{% url 'searchproduct' %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="search" required class="form-control" name="productsearch" id="searchproducts" placeholder="Search products" class="px-12">
+          <button type="submit" class="input-group-text"> <i class="fa fa-search"> </i> </button>
+        </div>
+      </form>
+      </span>
+    </div>
+
+    <div class="w3-col s2">
+      <a class="nav-link {% if request.resolver_match.url_name == 'cart' %}active{% endif %}" aria-current="page" href="{% url 'cart' %}">
+        <button type="button" class="btn btn-light" data-mdb-ripple-color="dark"> <i class="fa fa-shopping-cart text-success" aria-hidden="true"></i> 
+           <small></small></button></a>
+    </div>
+  </div>
+ 
+
+</div>

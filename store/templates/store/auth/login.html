@@ -1,0 +1,93 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+<div class="container w3-hide-small">
+    <div class="w3-row">
+        <div class="w3-col s6 w3-center">
+            <h4> <img
+                height="450px"
+                src="https://i.postimg.cc/tJrr48TD/pinot-noirxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png"
+                alt="First slide"
+              />  </h4>
+        </div>
+        <div class="w3-col s4 ">
+
+
+             <div class="card-body">
+               <form action="" method="POST">
+                {% csrf_token %}
+                <div class="">
+                    <br><br>
+                    <h4> <img
+                        height="50px"
+                        src="https://i.postimg.cc/Ghfy0fyc/Trending-Productswsdfgvbnm.png"
+                        alt="First slide"
+                      />  </h4>
+                </div>
+
+                <div class="form-group  py-2">
+                    <label for="w3-opacity"> <span class="w3-opacity">GST/TIN Number </span></label>
+                    <input type="text" class="form-control" name="username" placeholder="Enter GST/TIN Number">
+                </div>
+                <div class="form-group">
+                    <label for="w3-opacity">  <span class="w3-opacity">Password</span></label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                </div>
+                <br>
+                <div class="w3-bar">
+                    <div class="w3-button w3-left w3-opacity"><small><a href="/register">* New to infrablue? <span class="w3-text-blue">Create an account</span></a></small></div>
+                    <div class="w3-button w3-right "> <button type="submit" class="btn float-end shadow btn-primary">Login
+                </button></div>
+                  </div>
+            </form>
+        </div></div>
+
+
+      </div>
+      </div>
+
+</div>
+
+<!--small-->
+<div class="container w3-hide-large w3-hide-medium">
+
+         <img
+               height="210px"
+                src="https://i.postimg.cc/MHrwRPHK/Best-b2b-shopping-experience-bb-removebg-preview-1.png"
+                alt="First slide"
+              />
+          <div class="px-3">
+               <form action="" method="POST">
+                {% csrf_token %}
+                <div class="">
+                <br>
+                    <h4> <img
+                        height="50px"
+                        src="https://i.postimg.cc/Ghfy0fyc/Trending-Productswsdfgvbnm.png"
+                        alt="First slide"
+                      />  </h4>
+                </div>
+
+                <div class="form-group  py-2">
+                    <label for="w3-opacity"> <span class="w3-opacity">GST/TIN Number </span></label>
+                    <input type="text" class="form-control" name="username" placeholder="Enter GST/TIN Number">
+                </div>
+                <div class="form-group">
+                    <label for="w3-opacity">  <span class="w3-opacity">Password</span></label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                </div>
+                <br>
+
+
+                <div class="w3-bar">
+                    <div class="w3-button w3-left w3-opacity"><small><a href="/register">* New to infrablue? <span class="w3-text-blue">Create an account</span></a></small></div>
+                    <div class="w3-button w3-right "> <button type="submit" class="btn float-end shadow btn-primary">Login
+                </button>
+            <br><br><br> <br><br><br>
+            </div>
+                  </div>
+            </form>
+      </div>
+    </div>
+
+{% endblock content %}

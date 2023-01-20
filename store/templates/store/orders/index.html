@@ -1,0 +1,81 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+    
+    <div class="py-3 bg-light">
+        <div class="container">
+            <a class="text-dark" href="{% url 'home' %}"><b> Home </b></a>
+            <span class="text-primary"><b>/</b></span>
+            <a class="text-dark" href="{% url 'myorders' %}"> <b>My orders</b> </a>
+        </div>
+    </div>
+    <div class="container my-3 w3-hide-small">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="">
+                        <h3 class="mb-0">
+                            <img
+                            height="55px"
+                            src="https://i.postimg.cc/5NHqr6yt/Trending-Productsnnnnnnnnnn.png"
+                            alt="First slide"
+                          />      
+                        </h3>
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Order Date</th>
+                                    <th>Tracking Number</th>
+                                    <th>Total Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in orders %}
+                                    <tr>
+                                        <td> {{ item.created_at }}</td>
+                                        <td> {{ item.tracking_no }}</td>
+                                        <td> {{ item.total_price }}</td>
+                                        <td> {{ item.status }}</td>
+                                        <td> 
+                                            <a href="{% url 'orderview' item.tracking_no %}" class="btn btn-primary">View</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--small-->
+
+<div class="w3-hide-large w3-hide-medium px-4 py-4">
+    <div class="card " style="width: 22rem;">
+        <div class="">
+            <img
+            height="45px"
+            src="https://i.postimg.cc/5NHqr6yt/Trending-Productsnnnnnnnnnn.png"
+            alt="First slide"
+          />    
+        </div>
+        {% for item in orders %}
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Date  </strong><span class="w3-right">{{ item.created_at }}</span></li>
+          <li class="list-group-item">Tracking Number  <span class="w3-right">{{ item.tracking_no }}</span></li>
+          <li class="list-group-item">Total Price  <span class="w3-right">{{ item.total_price }}</span></li>
+          <li class="list-group-item">Action  <span class="w3-right"> {{ item.status }}</span></li>
+          <li class="list-group-item"> <a href="{% url 'orderview' item.tracking_no %}" class="btn btn-primary btn-block">View</a></li>
+          
+        {% endfor %}
+    
+        </ul>
+      </div>
+</div>
+{% endblock content %}

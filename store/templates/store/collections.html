@@ -1,0 +1,83 @@
+{% extends 'store/layouts/main.html' %}
+
+{% block content %}
+
+<div class="py-3 bg-light">
+  
+    <div class="container">
+        <a class="text-dark" href="{% url 'home' %}"><b> Home </b></a>
+        <span class="text-primary"><b>/</b></span>
+        <a class="text-dark" href="{% url 'checkout' %}"> <b> Checkout</b> </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>
+                <img
+                height="55px"
+                src="https://i.postimg.cc/rppCLzN2/fff.png"
+                alt="First slide"
+              />  
+
+            </h1>
+            <a href="{% url 'homeworker' %}">
+            <img
+            height="100px"
+            src="https://i.postimg.cc/rmrfd8pX/cementnnnnnnnnnnnnnnnnnnnnn.png"
+            alt="First slide"
+          />
+          </a>  
+            <div class="row w3-hide-small">
+            {% for item in category %}
+                <div class="col-md-3">
+                    <div class="">
+                        <a href="{% url 'collectionsview' item.slug %}">
+                            <div class="card-body">
+                                <div class="category-image">
+                                  
+                                    <img
+                                    height="120px"
+                                    src="{{ item.image.url }}"
+                                    alt="First slide"
+                                  />  
+                                </div>
+                               
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    <!--small-->
+    <div class="row w3-hide-large w3-hide-medium">
+        {% for item in category %}
+        
+                    <a href="{% url 'collectionsview' item.slug %}">
+                        <div class="card-body">
+                            <div class="category-image">
+                                <img
+                                    height="90px"
+                                    src="{{ item.image.url }}"
+                                    alt="First slide"
+                                  />  
+                            </div>
+                           
+                        </div>
+                    </a>
+              
+        {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock content %}
